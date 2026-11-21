@@ -762,7 +762,7 @@
       return;
     }
     const total = bagTotal();
-    const items = bag.map((item, index) => `${index + 1}. ${item.name} x${qtyOf(item)} - ${fmt(item.price*qtyOf(item))}`).join('\n');
+    const items = bag.map((item, index) => `${index + 1}. ${item.name} x${qtyOf(item)}, ${fmt(item.price*qtyOf(item))}`).join('\n');
     const message = `Hello Gidan Gayu Collection, I would like to order:\n\n${items}\n\nEstimated total: ${money(total)+(bag.some(i=>!i.price)?' + units on request':'')}`;
     const a = document.createElement('a');
     a.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
